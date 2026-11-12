@@ -1,0 +1,126 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>MESTIZO ERP</title>
+<style>
+:root{--bg:#f6f1ea;--cd:#fffaf4;--tx:#2c1f16;--mu:#7a6a5c;--br:#9a5b32;--dk:#3b2a20;--ol:#7d8450;--sa:#ece0cc;--bd:#e4d8c6;--rd:#b8432f;--am:#c99a2e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1d1612;--cd:#2a201a;--tx:#f1e7da;--mu:#b5a493;--sa:#3a2d24;--bd:#43352b;--dk:#120d0a}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.4 Georgia,"Times New Roman",serif}
+header{background:linear-gradient(90deg,#4a3326,#8a6a54);color:#fff;padding:12px 18px;display:flex;gap:14px;align-items:center}
+header b{font-size:22px;letter-spacing:3px}header span{opacity:.85;font-size:13px}
+.w{display:flex;min-height:calc(100vh - 56px)}nav{width:190px;background:var(--dk);padding:12px 8px;flex-shrink:0}
+nav a{display:block;color:#eadfce;padding:10px 12px;border-radius:8px;cursor:pointer;margin-bottom:3px;font-family:system-ui,sans-serif;font-size:14px}
+nav a.on{background:var(--br);color:#fff}main{flex:1;padding:18px;min-width:0;max-width:1200px}
+h1{margin:0;border-left:4px solid var(--br);padding-left:12px;font-size:26px}h2{font-size:17px;margin:0 0 10px}.mu{color:var(--mu);margin:4px 0 14px}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin-bottom:14px}
+.cd{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:14px;box-shadow:0 1px 3px #0001}
+.k{border-left:4px solid var(--br)}.k small{color:var(--mu);font-family:system-ui,sans-serif}.k div{font-size:24px;font-weight:700}.k.r{border-color:var(--rd)}
+.sc{overflow-x:auto}table{border-collapse:collapse;width:100%;font-family:system-ui,sans-serif;font-size:13px}
+th{background:var(--sa);text-align:left;padding:8px;white-space:nowrap}td{padding:8px;border-bottom:1px solid var(--bd);vertical-align:middle}tr.c{cursor:pointer}tr.c:hover{background:var(--sa)}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;background:var(--sa);font-size:12px;font-family:system-ui,sans-serif;white-space:nowrap}
+.pill.g{background:#dfe5c4;color:#43491f}.pill.r{background:#f4d3cb;color:#8a2a1a}.pill.a{background:#f3e2b3;color:#6b4d05}
+.b{border:1px solid var(--br);background:transparent;color:var(--br);border-radius:8px;padding:5px 10px;cursor:pointer;font-size:12px;font-family:system-ui,sans-serif}
+.b.o{background:var(--br);color:#fff}.b.r{border-color:var(--rd);color:var(--rd)}.b.big{padding:9px 16px;font-size:14px}
+.bar{height:10px;background:var(--sa);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ol)}
+.row{display:flex;gap:8px;align-items:center;margin:6px 0;font-family:system-ui,sans-serif;font-size:13px}.row .bar{flex:1}
+.al{padding:8px 10px;border-radius:8px;margin:6px 0;background:#f8e4dd;color:#7a2b1c;font-family:system-ui,sans-serif;font-size:13px}.al.w2{background:#f6ecc9;color:#664b06}
+.fl{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch;margin:8px 0}.fl .cd{padding:8px 12px;min-width:120px;font-family:system-ui,sans-serif;font-size:12px}.fl b{display:block;font-size:13px}
+.st{display:flex;justify-content:space-between;margin:18px 0;overflow-x:auto;gap:8px}
+.st div{text-align:center;flex:1;min-width:70px;font-family:system-ui,sans-serif;font-size:12px;color:var(--mu)}
+.st i{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;margin:0 auto 6px;background:var(--sa);font-style:normal;border:2px solid var(--bd)}
+.st .d i{background:var(--br);color:#fff;border-color:var(--br)}.st .d{color:var(--tx)}.st .c i{border-color:var(--br);box-shadow:0 0 0 4px #9a5b3233}.st .c{color:var(--br);font-weight:700}
+.mo{position:fixed;inset:0;background:#000a;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:20px;z-index:20}
+.mb{background:var(--bg);border-radius:14px;max-width:880px;width:100%;padding:18px;position:relative}.x{position:absolute;right:12px;top:8px;font-size:24px;cursor:pointer}
+input,select{padding:8px;border:1px solid var(--bd);border-radius:8px;background:var(--cd);color:var(--tx);width:100%;margin:3px 0 8px;font-size:14px}
+.ok{background:#e4ead0;border-left:4px solid var(--ol);border-radius:10px;padding:14px;margin:10px 0;font-family:system-ui,sans-serif}
+@media(max-width:760px){.w{flex-direction:column}nav{width:auto;display:flex;overflow-x:auto;gap:4px}nav a{white-space:nowrap;margin:0}h1{font-size:21px}}
+</style></head><body><div id="app"></div>
+<script>
+const K='mestizo_erp_v1',DAY=864e5,$=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fm=n=>'$ '+Math.round(n).toLocaleString('es-AR'),now=()=>new Date().toLocaleString('es-AR',{dateStyle:'short',timeStyle:'short'});
+const fd=t=>new Date(t).toLocaleDateString('es-AR',{day:'numeric',month:'short',year:'numeric'});
+const ST=['Confirmado','Materiales','Estructura','Funda','Tapizado','Calidad','Despacho','Entregado'];
+const OPS={carp:'Carpintería',enc:'Encordado y emplantillado',esp:'Espumado y relleno',corte:'Corte de tela',cost:'Costura',tap:'Tapizado',cal:'Control de calidad',desp:'Despacho',ent:'Entrega al cliente'};
+const REQ={carp:[],enc:['carp'],esp:['enc'],corte:[],cost:['corte'],tap:['esp','cost'],cal:['tap'],desp:['cal'],ent:['desp']};
+const USE={carp:['pino'],esp:['espuma','guata','elast'],corte:['tela','lienc'],tap:['grapas']};
+const PK={Cala:1,Tierra:1.3,Nubes:1.1,Gervasoni:1.5},BASE={Cala:1850000,Tierra:2400000,Nubes:2100000,Gervasoni:3200000};
+const MED={Cala:'2,50 × 1,00 × 0,82 m',Tierra:'2,20 × 0,95 × 0,82 m',Nubes:'2,40 × 1,60 × 0,80 m',Gervasoni:'2,80 × 1,10 × 0,85 m'};
+const MSG=['Tu pedido fue confirmado.','Estamos preparando los materiales.','Tu estructura está en fabricación.','Estamos confeccionando tu funda.','Tu sillón se encuentra en tapizado.','Estamos realizando el control de calidad.','Tu pedido está listo para despacho.'];
+let S,view='panel',mod=null,P=null,Q='';
+const gM=id=>S.mats.find(m=>m.id===id),gO=id=>S.orders.find(o=>o.id===id);
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+const lg=(o,d)=>{o.hist.push({t:now(),d});S.log.push({t:now(),o:o.id,d});S.log=S.log.slice(-60)};
+function need(o){const k=PK[o.prod],q=o.qty,n={pino:.42*k*q,espuma:.16*k*q,guata:2*k*q,lienc:2*k*q,grapas:q,elast:4*k*q};n[o.tela]=3.2*k*q;Object.keys(n).forEach(x=>n[x]=+n[x].toFixed(2));return n}
+function reserve(o){const n=need(o),av=k=>gM(k).s-gM(k).r,miss=Object.keys(n).filter(k=>av(k)<n[k]-1e-9);
+ if(!miss.length){Object.keys(n).forEach(k=>gM(k).r=+(gM(k).r+n[k]).toFixed(2));o.res=n;o.mat='ok';lg(o,'Materiales reservados automáticamente')}
+ else{o.mat='falta';miss.forEach(k=>{if(!S.reqs.some(r=>!r.done&&r.id===k&&r.o===o.id))S.reqs.push({id:k,q:Math.ceil(n[k]-av(k)),o:o.id,done:false})});lg(o,'Faltante de material: se generó solicitud de compra')}}
+function mk(c,prod,tela,qty,days,p){S.n++;const price=BASE[prod]*qty,o={id:'MES-0'+S.n,c,tel:'11 5555-0'+S.n,prod,med:MED[prod],tela,qty,price,ant:Math.round(price*.4),ent:Date.now()+days*DAY,ops:{},res:{},cons:{},hist:[],mat:'',cx:0};
+ Object.keys(OPS).forEach(k=>o.ops[k]=0);lg(o,'Pedido creado y confirmado');reserve(o);S.orders.push(o);(p||[]).forEach(x=>{const[a,op]=x.split(':');act(o.id,op,a,1)});return o}
+const D=(...a)=>a.flatMap(op=>['s:'+op,'e:'+op]);
+function seed(){S={n:260,log:[],reqs:[],nc:[],orders:[],mats:[
+{id:'pino',n:'Madera de pino',u:'m³',s:8,r:0,min:2,c:480000,p:'Maderera del Sur'},{id:'espuma',n:'Espuma de alta densidad',u:'m³',s:3,r:0,min:.5,c:650000,p:'Espumas Argentinas'},
+{id:'boucle',n:'Bouclé natural',u:'m',s:10,r:0,min:6,c:18500,p:'Textiles Palermo'},{id:'pana',n:'Pana panne',u:'m',s:40,r:0,min:8,c:9800,p:'Textiles Palermo'},
+{id:'gab',n:'Gabardina',u:'m',s:55,r:0,min:8,c:7200,p:'Textiles Palermo'},{id:'guata',n:'Guata',u:'m',s:120,r:0,min:20,c:1800,p:'Insumos Tapicería SA'},
+{id:'lienc',n:'Liencillo',u:'m',s:90,r:0,min:20,c:1500,p:'Insumos Tapicería SA'},{id:'grapas',n:'Grapas',u:'caja',s:12,r:0,min:4,c:6500,p:'Ferretería Industrial'},{id:'elast',n:'Elásticos',u:'m',s:150,r:0,min:30,c:900,p:'Insumos Tapicería SA'}]};
+ mk('Lucía Fernández','Cala','boucle',1,2,[...D('carp','enc','esp','corte','cost'),'s:tap']);mk('Martín Acosta','Tierra','pana',1,6,[...D('carp','enc','corte'),'s:esp']);
+ mk('Carolina Benítez','Nubes','gab',1,12);mk('Federico Ríos','Gervasoni','boucle',2,9);mk('Valentina Sosa','Cala','pana',1,1,D('carp','enc','esp','corte','cost','tap','cal'));
+ mk('Joaquín Peralta','Tierra','boucle',1,-2,['s:carp']);mk('Agustina Molina','Cala','gab',1,-5,D(...Object.keys(OPS)));
+ mk('Nicolás Duarte','Nubes','pana',1,3,[...D('carp','enc','esp','corte','cost','tap'),'s:cal','r:cal']);save()}
+function act(id,op,a,silent){const o=gO(id),al=m=>silent||alert(m);if(!o)return;const st=o.ops[op];
+ if(a==='s'){if(st)return;if(REQ[op].some(r=>o.ops[r]!==2))return al('Etapa bloqueada: '+(op==='tap'?'el tapizado no puede iniciar hasta terminar estructura y funda.':'faltan etapas previas.'));
+  if((op==='carp'||op==='corte')&&o.mat!=='ok')return al('Faltan materiales. Registrá la recepción de la compra pendiente en Inventario.');
+  if(op==='desp'&&S.nc.some(n=>n.o===id&&n.open))return al('Despacho bloqueado: hay una no conformidad abierta.');o.ops[op]=1;lg(o,'Inició: '+OPS[op])}
+ if(a==='e'&&st===1){o.ops[op]=2;(USE[op]||[]).forEach(k=>{const i=k==='tela'?o.tela:k,m=gM(i),q=o.res[i]||0;m.s=+(m.s-q).toFixed(2);m.r=+(m.r-q).toFixed(2);o.cons[i]=q;o.res[i]=0});lg(o,'Finalizó: '+OPS[op])}
+ if(a==='r'&&st===1){o.ops.cal=0;S.nc.push({o:id,t:now(),d:'Defecto detectado en inspección final',open:true});lg(o,'Calidad RECHAZÓ el producto: no conformidad abierta, despacho bloqueado')}
+ if(!silent){save();R()}}
+const cur=o=>{const f=[1,o.mat==='ok'||o.ops.carp>0||o.ops.corte>0,o.ops.esp===2,o.ops.cost===2,o.ops.tap===2,o.ops.cal===2,o.ops.desp===2,o.ops.ent===2],i=f.indexOf(false);return i<0?8:i};
+const lab=o=>o.cx?'Cancelado':cur(o)===8?'Entregado':cur(o)<2&&o.mat==='falta'?'Falta material':cur(o)===2||cur(o)===3?'En fabricación':ST[cur(o)];
+const rdy=o=>!o.cx&&o.ops.cal===2&&!o.ops.desp,act_=()=>S.orders.filter(o=>!o.cx&&cur(o)<8);
+function AL(){const a=[];S.mats.forEach(m=>{if(m.s-m.r<m.min)a.push(['Stock bajo mínimo: '+m.n+' (disponible '+(m.s-m.r).toFixed(1)+' '+m.u+')',0])});
+ act_().forEach(o=>{if(o.mat==='falta')a.push([o.id+': faltan materiales, solicitud de compra generada',0]);if(o.ent<Date.now())a.push([o.id+': pedido demorado (prometido '+fd(o.ent)+')',0]);
+  if(!o.ops.tap&&(o.ops.esp===2)!==(o.ops.cost===2))a.push([o.id+': tapizado en espera, falta terminar '+(o.ops.esp===2?'la funda':'la estructura'),1])});
+ S.nc.filter(n=>n.open).forEach(n=>a.push(['No conformidad abierta en '+n.o+': despacho bloqueado',0]));return a}
+const k=(l,v,c)=>`<div class="cd k ${c||''}"><small>${l}</small><div>${v}</div></div>`;
+const pill=o=>`<span class="pill ${o.cx?'r':cur(o)===8?'g':o.mat==='falta'?'a':''}">${lab(o)}</span>`;
+const tbl=L=>`<div class=sc><table><tr><th>Orden</th><th>Cliente</th><th>Modelo</th><th>Medidas</th><th>Tela</th><th>Etapa</th><th>Entrega</th></tr>${L.map(o=>`<tr class=c onclick="mod='${o.id}';R()"><td><b>${o.id}</b></td><td>${esc(o.c)}</td><td>${o.prod}${o.qty>1?' ×'+o.qty:''}</td><td>${o.med}</td><td>${gM(o.tela).n}</td><td>${pill(o)}</td><td>${fd(o.ent)}</td></tr>`).join('')||'<tr><td colspan=7>Sin resultados</td></tr>'}</table></div>`;
+function panel(){const A=act_(),cnt={};A.forEach(o=>cnt[lab(o)]=(cnt[lab(o)]||0)+1);const mx=Math.max(1,...Object.values(cnt)),al=AL();
+ return `<h1>Panel general de operaciones</h1><p class=mu>Seguimiento integral de pedidos, producción e inventario. Datos de demostración ficticios.</p><div class=g4>${k('Pedidos activos',A.length)}${k('En producción',A.filter(o=>(o.ops.carp||o.ops.corte)&&o.ops.cal!==2).length)}${k('Listos para despacho',S.orders.filter(rdy).length)}${k('Demorados',A.filter(o=>o.ent<Date.now()).length,'r')}${k('Entregados',S.orders.filter(o=>!o.cx&&cur(o)===8).length)}${k('Facturación',fm(S.orders.filter(o=>!o.cx).reduce((a,o)=>a+o.price,0)))}${k('Inventario valorizado',fm(S.mats.reduce((a,m)=>a+m.s*m.c,0)))}${k('Alertas',al.length,'r')}</div>
+<div class=g2><div class=cd><h2>Pedidos activos</h2>${tbl(A)}</div><div><div class=cd><h2>Pedidos por etapa</h2>${Object.keys(cnt).map(l=>`<div class=row><span style="width:120px">${l}</span><div class=bar><i style="width:${cnt[l]/mx*100}%"></i></div><b>${cnt[l]}</b></div>`).join('')}</div><div class=cd style="margin-top:14px"><h2>Alertas</h2>${al.map(a=>`<div class="al ${a[1]?'w2':''}">${a[0]}</div>`).join('')||'Sin alertas'}</div></div></div>
+<div class=cd><h2>Actividad reciente</h2>${S.log.slice(-7).reverse().map(l=>`<div class=row><span class=mu style="width:110px">${l.t}</span><b>${l.o}</b> ${l.d}</div>`).join('')}</div>`}
+function pedidos(){return `<h1>Pedidos y clientes</h1><p class=mu>Cada pedido genera su orden de producción y reserva materiales automáticamente.</p><div style="display:flex;gap:10px;margin-bottom:10px"><input placeholder="Buscar por orden, cliente o modelo…" value="${esc(Q)}" oninput="Q=this.value;$('#tb').innerHTML=tbl(fl())"><button class="b o big" style="white-space:nowrap" onclick="mod='new';R()">+ Nuevo pedido</button></div><div class=cd id=tb>${tbl(fl())}</div>`}
+const fl=()=>S.orders.filter(o=>(o.id+o.c+o.prod).toLowerCase().includes(Q.toLowerCase()));
+function cell(o,op){const s=o.ops[op],i=`'${o.id}','${op}'`;if(o.cx)return '—';if(s===2)return '<span class="pill g">✓ Hecho</span>';
+ if(s===1)return op==='cal'?`<button class=b onclick="act(${i},'e')">Aprobar</button> <button class="b r" onclick="act(${i},'r')">Rechazar</button>`:`<button class=b onclick="act(${i},'e')">Finalizar</button>`;
+ if(REQ[op].some(r=>o.ops[r]!==2))return '<span class=pill>🔒 Bloqueada</span>';if((op==='carp'||op==='corte')&&o.mat!=='ok')return '<span class="pill a">Sin material</span>';
+ return `<button class="b o" onclick="act(${i},'s')">${op==='cal'?'Inspeccionar':'Iniciar'}</button>`}
+function produccion(){const A=act_(),box=op=>`<div class=cd><b>${OPS[op]}</b>${A.filter(o=>o.ops[op]===1).length} en curso · ${A.filter(o=>o.ops[op]===2).length} hechas</div>`;
+ return `<h1>Planificación del taller</h1><p class=mu>Dos líneas en paralelo que convergen en tapizado. El sistema bloquea el tapizado hasta que estructura y funda estén terminadas.</p>
+<div class=cd><b>Línea A: Estructura</b><div class=fl>${['carp','enc','esp'].map(box).join('')}</div><b>Línea B: Funda</b><div class=fl>${['corte','cost'].map(box).join('')}</div><b>Convergencia</b><div class=fl>${['tap','cal'].map(box).join('')}</div></div>
+<div class=cd style="margin-top:14px"><h2>Programa de producción</h2><div class=sc><table><tr><th>Orden</th><th>Producto</th><th>Entrega</th><th>A · Carpintería</th><th>A · Encordado</th><th>A · Espumado</th><th>B · Corte</th><th>B · Costura</th><th>Tapizado</th><th>Calidad</th></tr>${A.map(o=>`<tr><td><b>${o.id}</b></td><td>${o.prod}</td><td>${fd(o.ent)}</td>${['carp','enc','esp','corte','cost','tap','cal'].map(op=>`<td>${cell(o,op)}</td>`).join('')}</tr>`).join('')}</table></div></div>`}
+function inventario(){return `<h1>Inventario y materias primas</h1><p class=mu>Stock disponible = stock actual − reservado. Los consumos se descuentan al finalizar cada operación.</p><div class=cd><div class=sc><table><tr><th>Material</th><th>Unidad</th><th>Stock</th><th>Reservado</th><th>Disponible</th><th>Mínimo</th><th>Costo unit.</th><th>Proveedor</th><th></th></tr>${S.mats.map(m=>{const a=m.s-m.r;return `<tr><td><b>${m.n}</b></td><td>${m.u}</td><td>${m.s}</td><td>${m.r}</td><td>${a.toFixed(2)}</td><td>${m.min}</td><td>${fm(m.c)}</td><td>${m.p}</td><td>${a<m.min?'<span class="pill r">Bajo mínimo</span>':'<span class="pill g">OK</span>'}</td></tr>`}).join('')}</table></div></div>
+<div class=cd style="margin-top:14px"><h2>Solicitudes de compra</h2>${S.reqs.map((r,i)=>`<div class=row><span>${r.done?'✓':'•'} ${r.q} ${gM(r.id).u} de <b>${gM(r.id).n}</b> (${gM(r.id).p}) para ${r.o}</span>${r.done?'':`<button class="b o" onclick="recv(${i})">Registrar recepción</button>`}</div>`).join('')||'Sin solicitudes'}</div>`}
+function recv(i){const r=S.reqs[i],m=gM(r.id);m.s=+(m.s+r.q).toFixed(2);r.done=true;S.orders.filter(o=>o.mat==='falta'&&!o.cx).forEach(reserve);save();R()}
+function calidad(){const A=act_().filter(o=>o.ops.tap===2&&o.ops.cal!==2);
+ return `<h1>Control de calidad</h1><p class=mu>Si un producto no pasa la inspección se abre una no conformidad y se bloquea el despacho.</p><div class=cd><h2>Pendientes de inspección</h2>${A.map(o=>`<div class=row><b>${o.id}</b> ${o.prod} · ${esc(o.c)} ${cell(o,'cal')}</div>`).join('')||'Nada pendiente'}</div>
+<div class=cd style="margin-top:14px"><h2>No conformidades</h2>${S.nc.map((n,i)=>`<div class=row><span class="pill ${n.open?'r':'g'}">${n.open?'Abierta':'Resuelta'}</span><b>${n.o}</b> ${n.t} · ${n.d}${n.open?` <button class="b o" onclick="S.nc[${i}].open=false;lg(gO('${n.o}'),'No conformidad resuelta: requiere nueva inspección');save();R()">Resolver (acción correctiva)</button>`:''}</div>`).join('')||'Sin registros'}</div>`}
+function despacho(){const L=S.orders.filter(o=>!o.cx&&o.ops.cal===2||S.nc.some(n=>n.o===o.id&&n.open));
+ return `<h1>Despacho y logística</h1><p class=mu>Solo se despachan pedidos aprobados por Calidad y sin no conformidades abiertas.</p><div class=cd><div class=sc><table><tr><th>Orden</th><th>Cliente</th><th>Estado</th><th>Acción</th></tr>${L.map(o=>{const nc=S.nc.some(n=>n.o===o.id&&n.open);return `<tr><td><b>${o.id}</b></td><td>${esc(o.c)}</td><td>${nc?'<span class="pill r">Bloqueado por calidad</span>':pill(o)}</td><td>${nc?'—':o.ops.ent===2?'Entregado':o.ops.desp===2?`<button class="b o" onclick="act('${o.id}','ent','s');act('${o.id}','ent','e')">Confirmar entrega</button>`:`<button class="b o" onclick="act('${o.id}','desp','s');act('${o.id}','desp','e')">Despachar</button>`}</td></tr>`}).join('')||'<tr><td colspan=4>Sin productos terminados</td></tr>'}</table></div></div>`}
+function portal(){const L=S.orders.filter(o=>!o.cx);if(!P||!gO(P))P=L[0]&&L[0].id;const o=gO(P);if(!o)return '<h1>Portal</h1>';const c=cur(o);
+ const msg=c===8?'Tu pedido fue entregado.':c===6&&o.ops.desp===1?'Tu pedido está en camino.':(c===2||c===3)&&o.ops.esp!==2&&o.ops.cost!==2&&o.ops.carp+o.ops.corte>0?'Estamos fabricando tu estructura y confeccionando tu funda.':MSG[c];
+ return `<h1>Seguimiento de mi pedido</h1><p class=mu>Vista del comprador: solo muestra información de su propio pedido. Elegí un pedido para simular el ingreso del cliente.</p><select onchange="P=this.value;R()">${L.map(x=>`<option ${x.id===P?'selected':''} value="${x.id}">${x.id} · ${esc(x.c)}</option>`).join('')}</select>
+<div class="cd g4" style="margin-top:8px"><div><small class=mu>Pedido</small><div style="font-size:22px"><b>${o.id}</b></div></div><div><small class=mu>Modelo</small><div><b>${o.prod}</b> · ${o.med}</div></div><div><small class=mu>Tela seleccionada</small><div><b>${gM(o.tela).n}</b></div></div><div><small class=mu>Fecha de entrega prometida</small><div><b>${fd(o.ent)}</b></div></div></div>
+<div class=cd><h2>Estado de mi pedido</h2><div class=st>${ST.map((s,i)=>`<div class="${i<c?'d':i===c?'c':''}"><i>${i<c?'✓':i+1}</i>${s}</div>`).join('')}</div></div>
+<div class=g2><div class=ok><b style="font-size:19px">${c===8?'¡Listo!':'Tu pedido avanza normalmente'}</b><br>${msg}</div><div class=cd><h2>¿Necesitás ayuda?</h2><a href="https://wa.me/5491100000000" target=_blank><button class="b o big">WhatsApp</button></a> <a href="mailto:hola@mestizo.example"><button class="b big">Enviar un correo</button></a></div></div>
+<div class=cd><h2>Historial de actualizaciones</h2>${o.hist.filter(h=>!/Materiales reservados|Faltante|RECHAZ|no conformidad/i.test(h.d)).slice().reverse().map(h=>`<div class=row><span class=mu style="width:110px">${h.t}</span>${h.d}</div>`).join('')}</div>`}
+function M(){if(mod==='new')return `<div class=mo><div class=mb><span class=x onclick="mod=null;R()">×</span><h2>Nuevo pedido</h2><label>Cliente<input id=nc></label><label>Modelo<select id=np>${Object.keys(PK).map(p=>`<option>${p}</option>`)}</select></label><label>Tela<select id=nt>${['boucle','pana','gab'].map(t=>`<option value=${t}>${gM(t).n}</option>`)}</select></label><label>Cantidad<input id=nq type=number value=1 min=1></label><label>Entrega prometida en (días)<input id=nd type=number value=21></label><button class="b o big" onclick="newO()">Crear pedido y reservar materiales</button></div></div>`;
+ const o=gO(mod);if(!o)return '';const sal=o.price-o.ant;
+ return `<div class=mo><div class=mb><span class=x onclick="mod=null;R()">×</span><h1>Ficha integral · ${o.id}</h1><p class=mu>${pill(o)} · Entrega prometida ${fd(o.ent)}</p><div class=g2><div class=cd><h2>Cliente</h2>${esc(o.c)}<br>${o.tel}</div><div class=cd><h2>Producto</h2>${o.prod} ×${o.qty}<br>${o.med}<br>Tela: ${gM(o.tela).n}</div><div class=cd><h2>Importes</h2>Total ${fm(o.price)}<br>Anticipo ${fm(o.ant)}<br>Saldo ${fm(sal)}</div></div>
+<div class=cd><h2>Operaciones</h2>${Object.keys(OPS).filter(x=>x!=='ent').map(op=>`<div class=row><span style="width:210px">${OPS[op]}</span>${cell(o,op)}</div>`).join('')}</div>
+<div class=cd style="margin:14px 0"><h2>Materiales</h2>${Object.entries(need(o)).map(([i,q])=>`<div class=row><span style="width:210px">${gM(i).n}</span>${q} ${gM(i).u} · ${o.cons[i]?'<span class="pill g">Consumido</span>':o.res[i]?'<span class="pill">Reservado</span>':'<span class="pill a">Faltante</span>'}</div>`).join('')}</div>
+<div class=cd><h2>Historial</h2>${o.hist.slice().reverse().map(h=>`<div class=row><span class=mu style="width:110px">${h.t}</span>${h.d}</div>`).join('')}</div>${o.cx?'':`<p><button class="b r" onclick="if(confirm('¿Cancelar el pedido?')){cancel('${o.id}')}">Cancelar pedido</button></p>`}</div></div>`}
+function cancel(id){const o=gO(id);Object.keys(o.res).forEach(i=>{gM(i).r=+(gM(i).r-o.res[i]).toFixed(2);o.res[i]=0});o.cx=1;lg(o,'Pedido cancelado, reservas liberadas');save();mod=null;R()}
+function newO(){const c=$('#nc').value.trim();if(!c)return alert('Ingresá el cliente');const o=mk(c,$('#np').value,$('#nt').value,Math.max(1,+$('#nq').value||1),+$('#nd').value||21);save();mod=o.id;view='pedidos';R()}
+function R(){const N=[['panel','Panel'],['pedidos','Pedidos'],['produccion','Producción'],['inventario','Inventario'],['calidad','Calidad'],['despacho','Despacho'],['portal','Portal del cliente']],V={panel,pedidos,produccion,inventario,calidad,despacho,portal};
+ $('#app').innerHTML=`<header><b>MESTIZO</b><span>ERP de Fabricación de Muebles · prototipo</span></header><div class=w><nav>${N.map(n=>`<a class="${view===n[0]?'on':''}" onclick="view='${n[0]}';R()">${n[1]}</a>`).join('')}<a onclick="if(confirm('¿Restaurar los datos de demostración?')){seed();R()}" style="opacity:.6">↺ Reiniciar demo</a></nav><main>${V[view]()}</main></div>${mod?M():''}`}
+try{S=JSON.parse(localStorage.getItem(K))}catch(e){}if(!S)seed();R();
+</script></body></html>
